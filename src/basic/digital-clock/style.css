@@ -1,0 +1,115 @@
+body {
+    font-family: sans-serif;
+    background: #000;
+}
+
+.select-wrap {
+    position: relative;
+    /* top: 200px; */
+    height: 100%;
+    /* perspective: 1200px; */
+    text-align: center;
+    overflow: hidden;
+    font-size: 20px;
+    color: #ddd;
+}
+
+.select-wrap:before,
+.select-wrap:after {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 50%;
+}
+
+.select-wrap:before {
+    top: 0;
+    background-image: linear-gradient(to bottom,
+            rgba(1, 1, 1, 0.5),
+            rgba(1, 1, 1, 0));
+}
+
+.select-wrap:after {
+    bottom: 0;
+    background-image: linear-gradient(to top,
+            rgba(1, 1, 1, 0.5),
+            rgba(1, 1, 1, 0));
+}
+
+.select-options {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    display: block;
+    transform: translateZ(-150px) rotateX(0deg);
+    -webkit-font-smoothing: subpixel-antialiased;
+    color: #666;
+}
+
+.select-options.select-option {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* @for $i from 1 through 100 {
+    .select-options.select-option:nth-child(#{$i}) {
+        transform: rotateX(-18deg * ($i - 1)) translateZ(150px);
+    }
+} */
+
+
+.highlight {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+    background-color: #000;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.highlight-list {
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+}
+
+/* date */
+.date-selector {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 2000px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: 600px;
+    height: 300px;
+}
+
+.date-selector>div {
+    flex: 1;
+}
+
+.date-selector.select-wrap {
+    font-size: 18px;
+}
+
+.date-selector.highlight {
+    font-size: 20px;
+}

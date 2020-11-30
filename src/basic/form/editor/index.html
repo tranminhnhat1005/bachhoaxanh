@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Rich Text Editor</h1>
+    <table style="border: 0; background-color: #e1f2ff;" cellpadding="0" cellspacing="1">
+        <tr height="20">
+            <td>
+                &nbsp;
+                <img src="bold.gif" title="Bold" onclick="doFormat('bold');">
+                <img src="italic.gif" title="Italic" onclick="doFormat('italic');">
+                <img src="underline.gif" title="Underline" onclick="doFormat('underline');">
+                <img src="image.gif" title="Insert Image" onclick="insertImage();">
+                <img src="link.gif" title="Hyperlink" onclick="addLink();">
+                <img src="removeformatting.gif" title="Remove Formatting" onclick="unformat();">
+            </td>
+
+        </tr>
+        <tr>
+            <td style="text-align: center; background-color: #fff;">
+                <iframe id="textArea" style="width:500px;height:240px;overflow:auto;"></iframe>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var editor = document.getElementById('textArea').contentWindow.document;
+        editor.designMode = 'On';
+        editor.open();
+        editor.write('<html><head></head><body></body></html>');
+        editor.close();
+
+        function doFormat(a, b) {
+            if (editor.queryCommandEnabled(a)) {
+                if (!b) { b = null; }
+                editor.execCommand(a, false, b);
+            }
+        }
+        function addLink() {
+            var aLink = prompt('Enter or paste a link :', '');
+            if (aLink) {
+                doFormat('CreateLink', aLink);
+            }
+        }
+        function insertImage() {
+            document.getElementById('textArea').contentWindow.focus();
+            var aLink = prompt('Enter or paste a URL :', '');
+            if (aLink) {
+                doFormat('InsertImage', aLink);
+            }
+        }
+        function unformat() {
+            doFormat('removeformat');
+            doFormat('unlink');
+        }
+    </script>
+</body>
+
+</html>

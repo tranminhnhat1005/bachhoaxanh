@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu__container col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="menu__item">
+                <a class="menu__item-link">
+                    <span>Database</span>
+                </a>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link">
+                    <span>Menu</span>
+                </a>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link">
+                    <span>Something</span>
+                </a class="menu__item-link">
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link">
+                    <span>Someone</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row">
+            <div class="page-container-admin">
+                <div class="container col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="title">DATABASE</div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group" style="margin-bottom: 52px;">
+                                    <div class="form-group">
+                                        <div class="form-control" style="margin-top: 3px;">
+                                            <label class="form-control-label" data-shrink="true">SeverName</label>
+                                            <div id="form-control-input-container" class="form-control-input-container">
+                                                <input class="form-control-input-content" type="text" value="10.0.0.12"
+                                                    name="SeverName" aria-invalid="false" onfocus="functionFocus(this)"
+                                                    onblur="functionBlur(this)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-control" style="margin-top: 3px;">
+                                            <label class="form-control-label" data-shrink="true">UserName</label>
+                                            <div id="form-control-input-container" class="form-control-input-container">
+                                                <input class="form-control-input-content" type="text" value="sa"
+                                                    name="UserName" aria-invalid="false" onfocus="functionFocus(this)"
+                                                    onblur="functionBlur(this)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-control" style="margin-top: 3px;">
+                                            <label class="form-control-label" data-shrink="true">Password</label>
+                                            <div id="form-control-input-container" class="form-control-input-container">
+                                                <input class="form-control-input-content" type="text" value="@abc123@"
+                                                    name="Password" aria-invalid="false" onfocus="functionFocus(this)"
+                                                    onblur="functionBlur(this)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-control" style="margin-top: 3px;">
+                                            <label class="form-control-label" data-shrink="true">Database</label>
+                                            <div id="form-control-input-container" class="form-control-input-container">
+                                                <input class="form-control-input-content" type="text" value="DRD02v41"
+                                                    name="Database" aria-invalid="false" onfocus="functionFocus(this)"
+                                                    onblur="functionBlur(this)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="just-between form-group">
+                                    <button class="btn" tabindex="0" type="button" margin="dense"
+                                        style="min-height: 33px; min-width: 40px;">
+                                        <span class="btn-label">
+                                            <img src="link.svg" width="10px" height="10px">
+                                            <span>Test connection</span>
+                                        </span>
+                                    </button>
+                                    <div>
+                                        <button tabindex="0" type="button" margin="dense"
+                                            style="min-height: 33px; min-width: 40px;" class="btn">
+                                            <span class="btn-label">
+                                                <span>
+                                                    Reset
+                                                </span>
+                                            </span>
+                                        </button>
+                                        <button class="btn btn-contained" tabindex="0" type="button" margin="dense"
+                                            style="min-height: 33px; min-width: 40px;">
+                                            <span class="btn-label">
+                                                <span>
+                                                    Save
+                                                </span>
+                                            </span>
+                                        </button>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const functionFocus = (e) => {
+            e.parentNode.classList.add("focused");
+        };
+
+        const functionBlur = (e) => {
+            e.parentNode.classList.remove("focused");
+        };
+
+        const buttons = document.getElementsByTagName("button");
+
+        Array.prototype.forEach.call(buttons, function (btn) {
+            btn.addEventListener('mousedown', function (e) {
+                let rect = e.currentTarget.getBoundingClientRect();
+                let x = e.clientX - rect.x;
+                let y = e.clientY - rect.y;
+                let ripples = document.createElement('span');
+                ripples.style.left = `${x}px`;
+                ripples.style.top = `${y}px`;
+                this.appendChild(ripples);
+                ripples.classList.add('ripple');
+                setTimeout(() => {
+                    ripples.remove()
+                }, 800)
+            })
+        })
+    </script>
+</body>
+
+
+
+</html>
