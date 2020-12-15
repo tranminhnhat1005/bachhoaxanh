@@ -13,3 +13,13 @@ export default function useId (idOverride) {
   );
   return id;
 }
+
+
+	/**@property */
+	/**@reference */
+	/**@function */
+	/**@ flow */
+	/**@style */
+	/**@memo */
+	/**@render */
+/**@proptypes */
