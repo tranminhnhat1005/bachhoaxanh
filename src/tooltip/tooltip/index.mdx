@@ -1,0 +1,65 @@
+import {Story, Props} from '@storybook/addon-docs/blocks';
+
+# Diginet-Core-Ui / Tooltip
+
+Every adventurer needs a set of tools to take along the way! Diginet-core-ui is toolset that we use to build front end apps.
+
+## Installation:
+
+```jsx
+npm install diginet-core-ui --save
+```
+
+## Tooltip
+
+The Component `<Tooltip></Tooltip>` is designed according to design guidelines of diginet
+
+##### Usagege
+
+You can use `<Tooltip></Tooltip>` by the following way, such as:
+
+```jsx
+import Tooltip from 'diginet-core-ui/components/tooltip/tooltip';
+```
+
+##### Examples
+
+You can use `<Tooltip></Tooltip>` to display any information that you pass in, such as:
+
+```jsx
+<Tooltip
+    content={node.isRequired}
+    arrow={bool}
+    arrowSize={number}
+    background={string}
+    className={string}
+    color={string}
+    direction={string}
+    distance={number}
+    eventOff={string}
+    eventOn={string}
+    eventToggle={string}
+    forceDirection={bool}
+    hoverDelay={number}
+    isOpen={bool}
+    mouseOutDelay={number}
+    padding={oneOfType([propTypes.string, propTypes.number])}
+    styles={object}
+    tagName={string}
+    tipContentHover={bool}
+    tipContentClassName={string}
+    useDefaultStyles={bool}
+    useHover={bool}
+    zIndex={number}
+    onToggle={func}
+    arrowContent={node}
+>
+    {children.node.isRequired}
+</Tooltip>
+```
+
+##### Component Examplele
+
+<Story id="tooltip--tooltip" />
+
+<!-- ############################################################################# -->

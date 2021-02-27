@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from './basic/digital-clock/index';
 import Date from './basic/form/line-form-date/index';
+import Swiper from './basic/swiper';
 import TimePicker from './basic/time-picker';
 const App = () => {
 	const ref = React.useRef(null);
@@ -46,14 +47,7 @@ const App = () => {
 					marginRight: 'auto',
 				}}
 			>
-				{/* <button onClick={handleClick}>Show Time</button>
-				<h1>
-					{value.value}
-					{value.timeType}
-				</h1> */}
-				{/* <Date /> */}
-				<TimePicker />
-				{/* <Clock label={'Label'} variant={'line'} ref={ref} /> */}
+				<Swiper />
 			</div>
 		</div>
 	);
