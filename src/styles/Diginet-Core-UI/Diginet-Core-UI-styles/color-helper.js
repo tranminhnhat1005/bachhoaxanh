@@ -118,7 +118,7 @@ export const decomposeColor = (color) => {
 
 	if (['rgb', 'rgba', 'hsl', 'hsla'].indexOf(type) === -1) {
 		throw (
-			('DigiNet-CORE-UI: Unsupported `%s` color.\n' + 'We support the following formats: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla().', color)
+			('DigiNet-CORE-UI: Unsupported `%s` color.\n We support the following formats: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla().', color)
 		);
 	}
 
